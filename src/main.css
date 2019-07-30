@@ -1,11 +1,10 @@
 body {
-    background: skyblue;
+    background: #1a5151;
     width: 1000px;
     margin: 0 auto;
     color: white;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
+    font-family: 'Roboto', sans-serif;}
 
 header {
     margin-top: 30px;
@@ -15,8 +14,16 @@ header {
     justify-content: center;
 }
 
+h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.2em;
+}
+
 header img {
     width: 150px;
+    margin-right: 20px;
 }
 
 .image-container {
@@ -26,21 +33,25 @@ header img {
 }
 
 button {
-    /* width: 340px; */
-    /* height: 340px; */
     padding: 0;
     margin: 0;
     border: 0;
-    background: skyblue;
-    transition: ease-in;
+    background: #1a5151;
+    transition: transform 200ms ease-in-out;
 }
 
 button:hover {
-    transform: translate3d(5px 5px 5px);
+    transform: translate3d(-1px, -1px, 0);
     cursor: pointer;
 }
 
+button:focus {
+    outline-color: green;
+}
+
 .button-image {
+    border: 2px solid white;
+    border-radius: 8px;
     object-fit: cover;
     width: 320px;
     height: 340px;
@@ -51,11 +62,22 @@ button:hover {
     height: 20px;
     border: 1px solid white;
     border-radius: 5px;
-    margin: 0 auto;
+    margin: 0 auto 70px;
 }
 
 .status-bar {
     width: 25%;
     height: 20px;
     background: white;
+}
+
+#results {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.share-section img {
+    object-fit: contain;
+    width: 50%;
 }
