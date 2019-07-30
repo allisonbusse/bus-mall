@@ -5,9 +5,9 @@ const bag = {
 };
 
 const banana = {
-   id: 'banana',
-   name: 'Banana Slicer',
-   image: 'assets/banana.jpg', 
+    id: 'banana',
+    name: 'Banana Slicer',
+    image: 'assets/banana.jpg', 
 };
 
 const bathroom = {
@@ -60,10 +60,24 @@ const dragon = {
 
 const pen = {
     id: 'pen',
-}
+    name: 'Utensil Pen',
+    image: 'assets/pen.jpg'
+};
 
 
 
 const products = [
+    bag,
+    banana,
+    bathroom,
+    boots,
+    breakfast,
+    bubblegum,
+    chair,
+    cthulhu,
+    dogDuck,
+    dragon,
+    pen
+];
 
-]
+export default products;

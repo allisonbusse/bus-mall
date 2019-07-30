@@ -81,3 +81,11 @@ button:focus {
     object-fit: contain;
     width: 50%;
 }
+
+table {
+    width: 400px;
+}
+
+.hidden {
+    display: none;
+}
