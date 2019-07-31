@@ -1,5 +1,4 @@
 import productList from './data/products.js';
-import ProductSet from './data/product-set.js';
 
 const store = {
     storage: window.localStorage,
