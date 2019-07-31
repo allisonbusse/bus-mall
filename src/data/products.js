@@ -31,7 +31,7 @@ const breakfast = {
 const bubblegum = {
     id: 'bubblegum',
     name: 'Meatball Bubble Gum',
-    image: './assets/bubblegum.jpg'
+    image: '/assets/bubblegum.jpg'
 };
 
 const chair = {
@@ -61,49 +61,49 @@ const dragon = {
 const pen = {
     id: 'pen',
     name: 'Utensil Pen',
-    image: './assets/pen.jpg'
+    image: '/assets/pen.jpg'
 };
 
 const petSweep = {
     id: 'pet-sweep',
     name: 'Pet Sweep Pads',
-    image: './assets/pet-sweep.jpg'
+    image: '/assets/pet-sweep.jpg'
 };
 
 const scissors = {
     id: 'scissors',
     name: 'Pizza Scissors',
-    image: './assets/scissors.jpg'
+    image: '/assets/scissors.jpg'
 };
 
 const shark = {
     id: 'shark',
     name: 'Shark Sleeping Bag',
-    image: './assets/shark.jpg'
+    image: '/assets/shark.jpg'
 };
 
 const sweep = {
     id: 'sweep',
     name: 'Baby Sweep Onesie',
-    image: './assets/sweep.png'
+    image: '/assets/sweep.png'
 };
 
 const tauntaun = {
     id: 'tauntaun',
     name: 'Tauntaun Sleeping Bag',
-    image: './assets/tauntaun.jpg'
+    image: '/assets/tauntaun.jpg'
 };
 
 const unicorn = {
     id: 'unicorn',
     name: 'Unicorn Meat',
-    image: './assets/unicorn.jpg'
+    image: '/assets/unicorn.jpg'
 };
 
 const usb = {
     id: 'usb',
     name: 'USB Tail',
-    image: './assets/usb.gif'
+    image: '/assets/usb.gif'
 };
 
 const waterCan = {
