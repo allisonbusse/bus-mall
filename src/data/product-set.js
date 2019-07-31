@@ -5,16 +5,6 @@ class ProductSet {
         this.list = products.slice();
     } 
 
-    getRandomProduct() {
-        const index = getRandomNumber(this.list.length);
-        const randomProduct = this.list[index];
-        return randomProduct;
-    }
-
-    // removeProduct(item) {
-    //     return this.list.splice(item, 1);
-    // }
-
     removeProduct(productId) {
         const list = this.list;
         for(let i = 0; i < list.length; i++) {
@@ -25,6 +15,18 @@ class ProductSet {
             }
         }
     }
+
+    getRandomProduct() {
+        const index = getRandomNumber(this.list.length);
+        const randomProduct = this.list[index];
+        this.removeProduct(randomProduct.id);
+        return randomProduct;
+    }
+
+    // removeProduct(item) {
+    //     return this.list.splice(item, 1);
+    // }
+
     
 }
 

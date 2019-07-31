@@ -6,115 +6,75 @@ const products = store.getProducts();
 
 //Copy the list and make a master version to add and remove from
 let masterProductList = new ProductSet(products);
+let currentDisplay = [];
 
 //Get domain elements
 const imageOne = document.getElementById('choice-one');
 const imageTwo = document.getElementById('choice-two');
 const imageThree = document.getElementById('choice-three');
 
-populateProducts();
 
-function populateProducts() {
-//Generate a random product
-    const randomProductOne = masterProductList.getRandomProduct();
-    randomProductOne.position = imageOne;
-    console.log(randomProductOne);
-
-//Display the product image
-    imageOne.firstChild.src = randomProductOne.image;
-
-//Remove that product from the master version
-    masterProductList.removeProduct(randomProductOne.id);
-
-//Generate second random product
-    const randomProductTwo = masterProductList.getRandomProduct();
-
-// //Display second product image
-    imageTwo.firstChild.src = randomProductTwo.image;
-
-//Remove second product from master
-    masterProductList.removeProduct(randomProductTwo.id);
-
-//Generate third random product
-    const randomProductThree = masterProductList.getRandomProduct();
-
-// //Display third product image
-    imageThree.firstChild.src = randomProductThree.image;
-
-//Remove third product from master
-    masterProductList.removeProduct(randomProductThree.id);
-
-// Create array of current display
-    let currentThreeProducts = [randomProductOne, randomProductTwo, randomProductThree];
-    console.log(currentThreeProducts);
-    let i;
-
-    const newTestProducts = new ProductSet(products);
-    let randomTest = newTestProducts.getRandomProduct();
-    function newArray(randomTest) {
-
-        for(i = 0; i < currentThreeProducts.length; i++) {
-
-            if(currentThreeProducts.includes(randomTest)) {
-                continue;
-            } else {
-                currentThreeProducts.push(randomTest);
-                return currentThreeProducts;
-            }
-        }  
-    }
-}
+//Generate a random product and push to array
+const randomProductOne = masterProductList.getRandomProduct();
+imageOne.firstChild.src = randomProductOne.image;
+currentDisplay.push(randomProductOne);
+    
+    //Generate second random product and push to array
+const randomProductTwo = masterProductList.getRandomProduct();
+imageTwo.firstChild.src = randomProductTwo.image;
+currentDisplay.push(randomProductTwo);
+    
+    //Generate third random product and push to array
+const randomProductThree = masterProductList.getRandomProduct();
+imageThree.firstChild.src = randomProductThree.image;
+currentDisplay.push(randomProductThree);
 
 
 // Set up button functionality
-//const buttonArray = [imageOne, imageTwo, imageThree];
-let imageOneVotes = 0;
-let imageTwoVotes = 0;
-let imageThreeVotes = 0;
-let imageOneViews = 0;
-let imageTwoViews = 0;
-let imageThreeViews = 0;
-//for(i = 0; i < buttonArray.length; i++) {
-imageOne.addEventListener('click', () => {
-    imageOneVotes++;
-    imageOneViews++;
-    imageTwoViews++;
-    imageThreeViews++;
-    let statusBar = document.getElementById('status-bar-border');
-    let barIncrement = document.createElement('div');
-    barIncrement.classList.add('status-bar');
-    statusBar.appendChild(barIncrement);
-    populateProducts();
-});
+let userClicks = 0;
 
-imageTwo.addEventListener('click', () => {
-    imageTwoVotes++;
-    imageOneViews++;
-    imageTwoViews++;
-    imageThreeViews++;
-    let statusBar = document.getElementById('status-bar-border');
-    let barIncrement = document.createElement('div');
-    barIncrement.classList.add('status-bar');
-    statusBar.appendChild(barIncrement);
-    populateProducts();
-});
+const buttons = document.querySelectorAll('button');
 
-imageThree.addEventListener('click', () => {
-    imageThreeVotes++;
-    imageOneViews++;
-    imageTwoViews++;
-    imageThreeViews++;
-    let statusBar = document.getElementById('status-bar-border');
-    let barIncrement = document.createElement('div');
-    barIncrement.classList.add('status-bar');
-    statusBar.appendChild(barIncrement);
-    populateProducts();
-});
+for(let i = 0; i < buttons.length; i++) {
+    const button = buttons[i];
+    button.addEventListener('click', handleUserChoice);
+}
 
-//}
+function handleUserChoice() {
+    // Create a new class
+    let refreshedProductList = new ProductSet(products);
     
-// After 25 turns
-// const imageSection = document.getElementById('image-section');
-// imageSection.classList.add('hidden');
-// const resultsSection = document.getElementById('bottom');
-// resultsSection.classList.remove('hidden');
+    // Remove currently displayed images from that class
+    for(let i = 0; i < currentDisplay.length; i++) {
+        refreshedProductList.removeProduct(currentDisplay[i].id);
+    }
+    // Reset current display array
+    currentDisplay = [];
+    
+    //Generate a random product and display image and push to array
+    const randomProductOne = refreshedProductList.getRandomProduct();
+    imageOne.firstChild.src = randomProductOne.image;
+    currentDisplay.push(randomProductOne);
+    
+    //Generate second random product and display image and push to array
+    const randomProductTwo = refreshedProductList.getRandomProduct();
+    imageTwo.firstChild.src = randomProductTwo.image;
+    currentDisplay.push(randomProductTwo);
+    
+    //Generate third random product and push to array
+    const randomProductThree = refreshedProductList.getRandomProduct();
+    imageThree.firstChild.src = randomProductThree.image;
+    currentDisplay.push(randomProductThree);
+    
+    userClicks++;
+    let statusBar = document.getElementById('status-bar-border');
+    let barIncrement = document.createElement('div');
+    barIncrement.classList.add('status-bar');
+    statusBar.appendChild(barIncrement);
+    if(userClicks === 25) {
+        const imageSection = document.getElementById('image-section');
+        imageSection.classList.add('hidden');
+        const resultsSection = document.getElementById('bottom');
+        resultsSection.classList.remove('hidden');
+    }
+}

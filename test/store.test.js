@@ -1,4 +1,5 @@
 import store from '../src/store.js';
+import ProductSet from '../src/data/product-set.js';
 import products from '../src/data/products.js';
 
 const test = QUnit.test;
