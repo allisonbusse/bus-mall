@@ -37,13 +37,13 @@ const bubblegum = {
 const chair = {
     id: 'chair',
     name: 'Inverted Chair',
-    image: './assets/chair.jpg'
+    image: '/assets/chair.jpg'
 };
 
 const cthulhu = {
     id: 'cthulhu',
     name: 'Cthulhu Action Figure',
-    image: './assets/cthulhu.jpg'
+    image: '/assets/cthulhu.jpg'
 };
 
 const dogDuck = {

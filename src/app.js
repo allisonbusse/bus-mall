@@ -17,16 +17,19 @@ const imageThree = document.getElementById('choice-three');
 //Generate a random product and push to array
 const randomProductOne = masterProductList.getRandomProduct();
 imageOne.firstChild.src = randomProductOne.image;
+imageOne.firstChild.id = randomProductOne.id;
 currentDisplay.push(randomProductOne);
     
     //Generate second random product and push to array
 const randomProductTwo = masterProductList.getRandomProduct();
 imageTwo.firstChild.src = randomProductTwo.image;
+imageTwo.firstChild.id = randomProductTwo.id;
 currentDisplay.push(randomProductTwo);
     
     //Generate third random product and push to array
 const randomProductThree = masterProductList.getRandomProduct();
 imageThree.firstChild.src = randomProductThree.image;
+imageThree.firstChild.id = randomProductThree.id;
 currentDisplay.push(randomProductThree);
 
 
@@ -40,7 +43,12 @@ for(let i = 0; i < buttons.length; i++) {
     button.addEventListener('click', handleUserChoice);
 }
 
-function handleUserChoice() {
+function handleUserChoice(event) {
+    // Check which button triggered click and save to store
+    const whichButton = event.target.id;
+    store.addProductCode(whichButton);
+    store.saveEachDisplay(currentDisplay);
+    
     // Create a new class
     let refreshedProductList = new ProductSet(products);
     
@@ -54,17 +62,21 @@ function handleUserChoice() {
     //Generate a random product and display image and push to array
     const randomProductOne = refreshedProductList.getRandomProduct();
     imageOne.firstChild.src = randomProductOne.image;
+    imageOne.firstChild.id = randomProductOne.id;
     currentDisplay.push(randomProductOne);
     
     //Generate second random product and display image and push to array
     const randomProductTwo = refreshedProductList.getRandomProduct();
     imageTwo.firstChild.src = randomProductTwo.image;
+    imageTwo.firstChild.id = randomProductTwo.id;
     currentDisplay.push(randomProductTwo);
     
     //Generate third random product and push to array
     const randomProductThree = refreshedProductList.getRandomProduct();
     imageThree.firstChild.src = randomProductThree.image;
+    imageThree.firstChild.id = randomProductThree.id;
     currentDisplay.push(randomProductThree);
+    
     
     userClicks++;
     let statusBar = document.getElementById('status-bar-border');

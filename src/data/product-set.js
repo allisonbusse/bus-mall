@@ -23,6 +23,8 @@ class ProductSet {
         return randomProduct;
     }
 
+    
+
     // removeProduct(item) {
     //     return this.list.splice(item, 1);
     // }
