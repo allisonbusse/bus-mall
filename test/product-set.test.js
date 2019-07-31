@@ -35,7 +35,7 @@ test('get random product', assert => {
     
 
     //Assert
-    assert.ok(productList.list.includes(randomProduct));
+    assert.notOk(productList.list.includes(randomProduct));
 });
 
 test('remove product', assert => {
