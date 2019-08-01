@@ -89,3 +89,4 @@ function handleUserChoice(event) {
         resultsSection.classList.remove('hidden');
     }
 }
+

@@ -32,7 +32,7 @@ header img {
     margin-bottom: 50px;
 }
 
-button {
+.display-button {
     padding: 0;
     margin: 0;
     border: 0;
@@ -40,12 +40,12 @@ button {
     transition: transform 200ms ease-in-out;
 }
 
-button:hover {
+.display-button:hover {
     transform: translate3d(-1px, -1px, 0);
     cursor: pointer;
 }
 
-button:focus {
+.display-button:focus {
     outline-color: green;
 }
 
@@ -73,19 +73,13 @@ button:focus {
     background: white;
 }
 
-#results {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-}
-
-.share-section img {
-    object-fit: contain;
-    width: 50%;
-}
-
-table {
-    width: 400px;
+#see-chart {
+    margin-bottom: 60px;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 10px;
+    color: white;
+    background-color: #72aaaa;
 }
 
 .hidden {

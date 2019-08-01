@@ -2,26 +2,26 @@ import store from './store.js';
 
 const userClicks = store.getClickHistory();
 const displayHistory = store.getItemsDisplayed();
-console.log(userClicks);
-console.log(userClicks[0].code);
+const masterList = store.getProducts();
 
-const itemLabels = [];
 const clickNumber = [];
 const displayNumber = [];
+const itemNames = [];
 
 
 for(let i = 0; i < displayHistory.length; i++) {
     const item = displayHistory[i];
-    itemLabels.push(item.code);
     displayNumber.push(item.quantity);
-    let clickedItem;
-    for(let j = 0; j < userClicks.length; j++) {
-        if(displayHistory[i].code === userClicks[j].code) {
-            clickedItem = userClicks[i];
-            clickedItem.quantity++;
+    for(let z = 0; z < masterList.length; z++) {
+        if(displayHistory[i].code === masterList[z].id) {
+            itemNames.push(masterList[z].name);
         }
     }
-    clickNumber.push(clickedItem.quantity);
+    for(let j = 0; j < userClicks.length; j++) {
+        if(displayHistory[i].code === userClicks[j].code) {
+            clickNumber.push(userClicks[j].quantity);
+        } 
+    }
 
 }
 
@@ -32,29 +32,34 @@ Chart.defaults.global.defaultFontColor = 'white';
 new Chart(ctx, {
     type: 'horizontalBar',
     data: {
-        labels: itemLabels,
+        labels: itemNames,
         datasets: [{
             label: 'Number of Clicks',
             data: clickNumber,
-            backgroundColor: 'blue'
+            backgroundColor: 'white',
+            barThickness: 'flex'
         },
         {
             label: 'Number of Views',
             data: displayNumber,
-            backgroundColor: 'red'
+            backgroundColor: '#9b9b9b',
         }
         ]
     },
     options: {
         scales: {
-            xAxes: [{
-                ticks: {
-                    beginAtZero: true,
-                    stepSize: 1,
-                    min: 0,
-                    max: 5
-                }
-            }]
+            yAxes: [{
+                barThickness: 10
+            }],
+            xAxes: [
+                {
+                    ticks: {
+                        beginAtZero: true,
+                        stepSize: 1,
+                        min: 0,
+                        max: 5
+                    }
+                }]
         },
         legend: {
             labels: {

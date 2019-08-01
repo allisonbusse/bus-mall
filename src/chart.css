@@ -1,4 +1,5 @@
 #chart {
-    width: 60%;
-    height: 500px;
+    width: 70%;
+    height: 700px !important;
+    margin: 50px auto;
 }
