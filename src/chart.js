@@ -13,18 +13,18 @@ for(let i = 0; i < displayHistory.length; i++) {
     const item = displayHistory[i];
     displayNumber.push(item.quantity);
     for(let z = 0; z < masterList.length; z++) {
-        if(displayHistory[i].code === masterList[z].id) {
+        if(displayHistory[i].id === masterList[z].id) {
             itemNames.push(masterList[z].name);
         }
     }
     for(let j = 0; j < userClicks.length; j++) {
-        if(displayHistory[i].code === userClicks[j].code) {
+        if(displayHistory[i].id === userClicks[j].id) {
             clickNumber.push(userClicks[j].quantity);
         } 
     }
 
 }
-
+console.log(displayHistory);
 
 const ctx = document.getElementById('chart');
 // eslint-disable-next-line no-undef
