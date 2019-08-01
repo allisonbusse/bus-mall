@@ -59,6 +59,7 @@ const store = {
         let clickHistory = store.get('user-clicks');
         if(!clickHistory) {
             clickHistory = [];
+            
         }
         return clickHistory;
     },

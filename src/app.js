@@ -42,7 +42,6 @@ for(let i = 0; i < buttons.length; i++) {
     const button = buttons[i];
     button.addEventListener('click', handleUserChoice);
 }
-
 function handleUserChoice(event) {
     // Check which button triggered click and save to store
     const whichButton = event.target.id;
