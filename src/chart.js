@@ -27,6 +27,7 @@ for(let i = 0; i < displayHistory.length; i++) {
 
 
 const ctx = document.getElementById('chart');
+// eslint-disable-next-line no-undef
 Chart.defaults.global.defaultFontColor = 'white';
 // eslint-disable-next-line no-undef
 new Chart(ctx, {
@@ -57,7 +58,7 @@ new Chart(ctx, {
                         beginAtZero: true,
                         stepSize: 1,
                         min: 0,
-                        max: 5
+                        max: 10
                     }
                 }]
         },

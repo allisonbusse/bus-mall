@@ -51,3 +51,38 @@ test('get products', assert => {
     assert.deepEqual(result, expected);
 });
 
+test('find product info', assert => {
+    //Arrange
+    // Set up your parameters and expectations
+    const code = 'pen';
+    
+    const expected = {
+        id: 'pen',
+        name: 'Utensil Pen',
+        image: '/assets/pen.jpg'
+    };
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const result = store.findProduct(products, code);
+
+    //Assert
+    assert.deepEqual(result, expected);
+});
+
+test('get click history', assert => {
+    //Arrange
+    // Set up your parameters and expectations
+    const expected = [];
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const result = store.getClickHistory();
+    
+    //Assert
+    assert.deepEqual(result, expected);
+});
+
+
+
+

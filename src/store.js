@@ -29,22 +29,22 @@ const store = {
         for(let i = 0; i < sandwiches.length; i++) {
             const sandwich = sandwiches[i];
             
-            if(sandwich.code === code) {
+            if(sandwich.id === code) {
                 return sandwich;
             }
         }
         return null;
     },
 
-    addProductCode(code) {
+    addProductCode(id) {
         let clickHistory = this.getClickHistory();
-        const lineItem = this.findProduct(clickHistory, code);
+        const lineItem = this.findProduct(clickHistory, id);
         if(lineItem) {
             lineItem.quantity++;
         }
         else {
             const lineItem = {
-                code: code,
+                id: id,
                 quantity: 1
             };
 
@@ -74,15 +74,15 @@ const store = {
     saveEachDisplay(currentArray) {
         for(let i = 0; i < currentArray.length; i++) {
             let itemsDisplayed = this.getItemsDisplayed();
-            let code = currentArray[i].id;
-            const lineItem = this.findProduct(itemsDisplayed, code);
+            let id = currentArray[i].id;
+            const lineItem = this.findProduct(itemsDisplayed, id);
 
             if(lineItem) {
                 lineItem.quantity++;
             }
             else {
                 const lineItem = {
-                    code: code,
+                    id: id,
                     quantity: 1
                 };
     
