@@ -1,6 +1,9 @@
 import store from './store.js';
 import ProductSet from './data/product-set.js';
 
+//Reset local storage
+//localStorage.clear();
+
 //Get list of products
 const products = store.getProducts();
 

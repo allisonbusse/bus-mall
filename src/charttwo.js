@@ -9,11 +9,15 @@ const clickNumber = [];
 const displayNumber = [];
 const itemNames = [];
 
+const totalClicks = [];
+const totalDisplays = []
+
 
 for(let i = 0; i < displayHistory.length; i++) {
     const item = displayHistory[i];
     displayNumber.push(item.quantity);
     for(let z = 0; z < masterList.length; z++) {
+        totalClicks.push(masterList[z].clicks);
         if(displayHistory[i].id === masterList[z].id) {
             itemNames.push(masterList[z].name);
         }
@@ -25,8 +29,9 @@ for(let i = 0; i < displayHistory.length; i++) {
     }
 
 }
+console.log(totalClicks);
 
-const ctx = document.getElementById('chart');
+const ctx = document.getElementById('alltimechart');
 // eslint-disable-next-line no-undef
 Chart.defaults.global.defaultFontColor = 'white';
 // eslint-disable-next-line no-undef
@@ -36,7 +41,7 @@ new Chart(ctx, {
         labels: itemNames,
         datasets: [{
             label: 'Number of Clicks',
-            data: clickNumber,
+            data: totalClicks,
             backgroundColor: 'white',
             barThickness: 'flex'
         },
@@ -98,76 +103,31 @@ resetButton.addEventListener('click', () => {
 
 
 
-// All time button functionality
-const allTimeButton = document.getElementById('all-time-results');
-allTimeButton.addEventListener('click', () => {
-    // Reset user clicks
-    let clickHistory = store.getClickHistory();
-    let displayHistory = store.getItemsDisplayed();
+// // All time button functionality
+// const allTimeButton = document.getElementById('all-time-results');
+// allTimeButton.addEventListener('click', () => {
+//     // Reset user clicks
+//     let clickHistory = store.getClickHistory();
+//     let displayHistory = store.getItemsDisplayed();
   
-    for(let i = 0; i < products.length; i++){
-        for(let j = 0; j < clickHistory.length; j++) {
-            if(clickHistory[j].id === products[i].id) {
-                products[i].clicks += clickHistory[j].quantity;
-            }
-        }
-        for(let z = 0; z < displayHistory.length; z++) {
-            if(displayHistory[z].id === products[i].id) {
-                products[i].displays += displayHistory[z].quantity;
-            }
-        }
-    }
-    store.save('products', products);
-    clickHistory = [];
-    store.save('user-clicks', clickHistory);
-    displayHistory = [];
-    store.save('items-displayed', displayHistory);
-    window.location = 'all-time-chart.html';
-});
+//     for(let i = 0; i < products.length; i++){
+//         for(let j = 0; j < clickHistory.length; j++) {
+//             if(clickHistory[j].id === products[i].id) {
+//                 products[i].clicks += clickHistory[j].quantity;
+//             }
+//         }
+//         for(let z = 0; z < displayHistory.length; z++) {
+//             if(displayHistory[z].id === products[i].id) {
+//                 products[i].displays += displayHistory[z].quantity;
+//             }
+//         }
+//     }
+//     store.save('products', products);
+//     clickHistory = [];
+//     store.save('user-clicks', clickHistory);
+//     displayHistory = [];
+//     store.save('items-displayed', displayHistory);
+//     window.location = 'all-time-chart.html';
+// });
 
 
-//All time chart
-
-const ctxTwo = document.getElementById('alltimechart');
-// eslint-disable-next-line no-undef
-Chart.defaults.global.defaultFontColor = 'white';
-// eslint-disable-next-line no-undef
-new Chart(ctxTwo, {
-    type: 'horizontalBar',
-    data: {
-        labels: itemNames,
-        datasets: [{
-            label: 'Number of Clicks',
-            data: clickNumber,
-            backgroundColor: 'white',
-            barThickness: 'flex'
-        },
-        {
-            label: 'Number of Views',
-            data: displayNumber,
-            backgroundColor: '#9b9b9b',
-        }
-        ]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                barThickness: 10
-            }],
-            xAxes: [
-                {
-                    ticks: {
-                        beginAtZero: true,
-                        stepSize: 1,
-                        min: 0,
-                        max: 10
-                    }
-                }]
-        },
-        legend: {
-            labels: {
-                fontColor: 'white'
-            }
-        }
-    }
-});

@@ -73,13 +73,17 @@ header img {
     background: white;
 }
 
-#see-chart {
+#see-chart, #reset-survey, #all-time-results {
     margin-bottom: 60px;
     font-size: 20px;
     text-transform: uppercase;
     padding: 10px;
     color: white;
     background-color: #72aaaa;
+}
+
+#reset-survey {
+    margin-right: 20px;
 }
 
 .hidden {

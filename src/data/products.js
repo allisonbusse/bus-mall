@@ -2,126 +2,160 @@ const bag = {
     id: 'bag',
     name: 'Star Wars Suitcase',
     image: './assets/bag.jpg',
-    quantity: 0
+    clicks: 0,
+    displays: 0
 };
 
 const banana = {
     id: 'banana',
     name: 'Banana Slicer',
     image: './assets/banana.jpg', 
-    quantity: 0
+    clicks: 0,
+    displays: 0
 };
 
 const bathroom = {
     id: 'bathroom',
     name: 'Bathroom iPad Stand',
     image: './assets/bathroom.jpg',
-    quantity: 0
+    clicks: 0,
+    displays: 0
 };
 
 const boots = {
     id: 'boots',
     name: 'Open-toed Rain Boots',
     image: './assets/boots.jpg',
-    quantity: 0
+    clicks: 0,
+    displays: 0
 };
 
 const breakfast = {
     id: 'breakfast',
     name: 'All-in-one Breakfast Machine',
     image: './assets/breakfast.jpg',
-    quantity: 0
+    clicks: 0,
+    displays: 0
 };
 
 const bubblegum = {
     id: 'bubblegum',
     name: 'Meatball Bubble Gum',
-    image: '/assets/bubblegum.jpg'
+    image: '/assets/bubblegum.jpg',
+    clicks: 0,
+    displays: 0
 };
 
 const chair = {
     id: 'chair',
     name: 'Inverted Chair',
-    image: '/assets/chair.jpg'
+    image: '/assets/chair.jpg',
+    clicks: 0,
+    displays: 0
 };
 
 const cthulhu = {
     id: 'cthulhu',
     name: 'Cthulhu Action Figure',
-    image: '/assets/cthulhu.jpg'
+    image: '/assets/cthulhu.jpg',
+    clicks: 0,
+    displays: 0
 };
 
 const dogDuck = {
     id: 'dog-duck',
     name: 'Dog Duck Lips',
-    image: './assets/dog-duck.jpg'
+    image: './assets/dog-duck.jpg',
+    clicks: 0,
+    displays: 0
 };
 
 const dragon = {
     id: 'dragon',
     name: 'Can of Dragon Meat',
     image: './assets/dragon.jpg',
-    quantity: ''
+    clicks: 0,
+    displays: 0
 };
 
 const pen = {
     id: 'pen',
     name: 'Utensil Pen',
-    image: '/assets/pen.jpg'
+    image: '/assets/pen.jpg',
+    clicks: 0,
+    displays: 0
 };
 
 const petSweep = {
     id: 'pet-sweep',
     name: 'Pet Sweep Pads',
-    image: '/assets/pet-sweep.jpg'
+    image: '/assets/pet-sweep.jpg',
+    clicks: 0,
+    displays: 0
 };
 
 const scissors = {
     id: 'scissors',
     name: 'Pizza Scissors',
-    image: '/assets/scissors.jpg'
+    image: '/assets/scissors.jpg',
+    clicks: 0,
+    displays: 0
 };
 
 const shark = {
     id: 'shark',
     name: 'Shark Sleeping Bag',
-    image: '/assets/shark.jpg'
+    image: '/assets/shark.jpg',
+    clicks: 0,
+    displays: 0
 };
 
 const sweep = {
     id: 'sweep',
     name: 'Baby Sweep Onesie',
-    image: '/assets/sweep.png'
+    image: '/assets/sweep.png',
+    clicks: 0,
+    displays: 0
 };
 
 const tauntaun = {
     id: 'tauntaun',
     name: 'Tauntaun Sleeping Bag',
-    image: '/assets/tauntaun.jpg'
+    image: '/assets/tauntaun.jpg',
+    clicks: 0,
+    displays: 0
 };
 
 const unicorn = {
     id: 'unicorn',
     name: 'Unicorn Meat',
-    image: '/assets/unicorn.jpg'
+    image: '/assets/unicorn.jpg',
+    clicks: 0,
+    displays: 0
 };
 
 const usb = {
     id: 'usb',
     name: 'USB Tail',
-    image: '/assets/usb.gif'
+    image: '/assets/usb.gif',
+    clicks: 0,
+    displays: 0
 };
 
 const waterCan = {
     id: 'water-can',
     name: 'Inverse Water Can',
-    image: './assets/water-can.jpg'
+    image: './assets/water-can.jpg',
+    clicks: 0,
+    displays: 0
 };
 
 const wineGlass = {
     id: 'wine-glass',
     name: 'The Ultimate Snifter',
-    image: './assets/wine-glass.jpg'
+    image: './assets/wine-glass.jpg',
+    clicks: 0,
+    displays: 0
 };
 
 const products = [
