@@ -59,7 +59,9 @@ test('find product info', assert => {
     const expected = {
         id: 'pen',
         name: 'Utensil Pen',
-        image: '/assets/pen.jpg'
+        image: '/assets/pen.jpg',
+        clicks: 0,
+        displays: 0,
     };
 
     //Act 

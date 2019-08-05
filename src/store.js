@@ -63,6 +63,15 @@ const store = {
         return clickHistory;
     },
 
+    getTotalClicks() {
+        let totalClicks = store.get('total-clicks');
+        if(!totalClicks) {
+            totalClicks = [];
+            
+        }
+        return totalClicks;
+    },
+
     getItemsDisplayed() {
         let itemsDisplayed = store.get('items-displayed');
         if(!itemsDisplayed) {
